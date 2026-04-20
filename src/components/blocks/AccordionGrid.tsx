@@ -1,0 +1,113 @@
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+
+const faqs = [
+  {
+    question: "What if I don't know exactly what I want to build yet?",
+    answer: "That's exactly why we start with a deep-dive workflow audit in Phase 1. We don't write a single line of code until we've fully mapped your operations and delivered interactive wireframes that solve the core business problem."
+  },
+  {
+    question: "What does working with you actually look like week by week?",
+    answer: "It’s highly structured and fiercely predictable. You get actual working software pushed to a live staging server every single Friday. We hop on a quick review async video or call, integrate your feedback, and immediately deploy the next iteration."
+  },
+  {
+    question: "Who builds the product — is it outsourced?",
+    answer: "No PM layers. No outsourcing to cheap talent mills. You work directly with our execution-obsessed, highly senior core engineering unit. We own the codebase natively and ship at a completely different velocity because of it."
+  },
+  {
+    question: "What happens after launch — are we on our own?",
+    answer: "No. Every sprint includes 30 days of post-launch support. We handle all server configurations, domains, automated scaling rules, and any unexpected bugs while you focus on onboarding your users."
+  },
+  {
+    question: "How is this different from hiring a freelancer?",
+    answer: "Freelancers are a single point of failure with massive key-person risk. If they get sick or ghost you, your product dies. We are a unified full-stack engineering factory with established playbooks, rigorous QA, and an ironclad 10-week delivery timeline."
+  },
+  {
+    question: "What if I need changes after the sprint ends?",
+    answer: "We build using extremely clean, modern tech stacks (React, Node, Python) and hand over 100% of the IP, documentation, and code to you. You can retain us on an expansion contract, or seamlessly hand it off to any internal engineering team."
+  },
+  {
+    question: "How do I get started?",
+    answer: "Book a 20-minute scoping call. No sales pressure or account executives. We'll map your problem in real-time and tell you immediately if our sprint system is the right fit for your velocity."
+  }
+];
+
+export function AccordionGrid() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section className="py-24 md:py-32 bg-primary">
+      <div className="max-w-[800px] mx-auto px-6">
+        
+        <div className="text-center mb-16">
+          <h2 className="text-[32px] md:text-[48px] font-black leading-tight text-white mb-4">
+            Frequently asked questions
+          </h2>
+          <p className="text-[16px] text-muted">
+            Everything you need to know about how we ship.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4">
+          {faqs.map((faq, idx) => {
+            const isOpen = openIndex === idx;
+            
+            return (
+              <div 
+                key={idx} 
+                className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${isOpen ? 'bg-elevated border-white/20' : 'bg-transparent border-divider hover:border-white/10'}`}
+              >
+                <button
+                  onClick={() => toggleFAQ(idx)}
+                  className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none"
+                  aria-expanded={isOpen}
+                >
+                  <span className={`text-[16px] md:text-[18px] font-bold pr-8 transition-colors ${isOpen ? 'text-white' : 'text-white/80'}`}>
+                    {faq.question}
+                  </span>
+                  <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? 'bg-accent text-primary' : 'bg-white/5 text-white/50'}`}>
+                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                  </div>
+                </button>
+                
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      <div className="p-6 md:p-8 pt-0 text-[15px] text-muted leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+
+          {/* Final Terminal Custom CTA Node */}
+          <div className="mt-8 p-8 md:p-10 rounded-2xl border-2 border-accent border-dashed bg-accent/5 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div>
+              <h4 className="text-[20px] font-bold text-white mb-2">Still have questions?</h4>
+              <p className="text-[14px] text-body">We're happy to walk through your specific use case.</p>
+            </div>
+            <Button variant="primary" className="shrink-0 px-8">
+              Talk to us directly &rarr;
+            </Button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}

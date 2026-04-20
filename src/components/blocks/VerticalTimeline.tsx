@@ -1,0 +1,147 @@
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const phases = [
+  {
+    phase: "Phase 1",
+    title: "Scope & Strategy",
+    duration: "Days 1–10",
+    description: "We don't guess. We map your exact workflow before writing a single line of code.",
+    points: [
+      "Deep-dive workflow audit",
+      "Full interactive wireframes",
+      "Fixed-price proposal lock",
+      "Architecture & DB design"
+    ]
+  },
+  {
+    phase: "Phase 2",
+    title: "First Live Build",
+    duration: "Days 11–40",
+    description: "You see actual working software on staging. No more mockups.",
+    points: [
+      "Core infrastructure deployed",
+      "Authentication & Security setup",
+      "Primary database hooked up",
+      "First clickable functional preview"
+    ]
+  },
+  {
+    phase: "Phase 3",
+    title: "Weekly Shipping",
+    duration: "Days 41–70",
+    description: "Every Friday, we demo a new live build. You test with real data.",
+    points: [
+      "Weekly live staging demos",
+      "Immediate feedback integration",
+      "Complex logic & API connections",
+      "End-to-end user workflows"
+    ]
+  },
+  {
+    phase: "Phase 4",
+    title: "Launch & Scale",
+    duration: "Day 70+",
+    description: "Production deployment and handover. The code is 100% yours.",
+    points: [
+      "Production server configuration",
+      "Domain & SSL mapping",
+      "Performance and load testing",
+      "30-day post-launch support"
+    ]
+  }
+];
+
+export function VerticalTimeline() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  return (
+    <section className="py-24 md:py-32 bg-elevated border-y border-divider overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-6">
+        
+        <div className="text-center mb-20 lg:mb-24">
+          <p className="text-[14px] uppercase tracking-wider text-accent font-bold mb-2">The Z3 Sprint System</p>
+          <h2 className="text-[32px] md:text-[48px] font-black leading-tight text-white">
+            How we ship in 10 weeks.
+          </h2>
+        </div>
+
+        {/* Timeline Container */}
+        <div className="relative">
+          
+          {/* Progress Line (Horizontal on Desktop, Vertical on Mobile) */}
+          <div className="absolute left-[31px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 md:bottom-auto md:top-6 w-[2px] md:w-full md:h-[2px] bg-white/10 z-0">
+            <motion.div 
+              initial={{ height: 0, width: 0 }}
+              whileInView={{ height: "100%", width: "100%" }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              className="bg-gradient-to-b md:bg-gradient-to-r from-accent via-blue-500 to-accent w-full h-full"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10">
+            {phases.map((phase, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: idx * 0.2 }}
+                onMouseEnter={() => setHoveredIndex(idx)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className="relative pl-16 md:pl-0 flex flex-col md:items-center w-full"
+              >
+                
+                {/* Node Dot */}
+                <div className="absolute left-6 md:left-1/2 -ml-[11px] md:-ml-3 top-2 md:top-2 w-6 h-6 rounded-full bg-primary ring-4 ring-accent flex items-center justify-center shadow-[0_0_15px_rgba(34,197,94,0.5)] z-20">
+                  <div className="w-2 h-2 rounded-full bg-white" />
+                </div>
+
+                {/* Card */}
+                <div className="md:mt-12 bg-primary border border-divider hover:border-accent hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300 rounded-[20px] p-6 md:p-8 w-full group cursor-default">
+                  
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="text-[12px] font-bold uppercase tracking-wider text-muted group-hover:text-white transition-colors">{phase.phase}</span>
+                    <span className="text-[12px] font-bold bg-accent/10 text-accent px-2 py-1 rounded-md">{phase.duration}</span>
+                  </div>
+                  
+                  <h3 className="text-[20px] lg:text-[24px] font-black text-white leading-tight mb-3">
+                    {phase.title}
+                  </h3>
+                  
+                  <p className="text-[14px] text-body mb-0">
+                    {phase.description}
+                  </p>
+
+                  <AnimatePresence>
+                    {hoveredIndex === idx && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                        animate={{ height: "auto", opacity: 1, marginTop: 24 }}
+                        exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden border-t border-divider pt-4"
+                      >
+                        <ul className="space-y-3">
+                          {phase.points.map((point, i) => (
+                            <li key={i} className="flex items-start gap-3">
+                              <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
+                              <span className="text-[13px] text-white/80">{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
