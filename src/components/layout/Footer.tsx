@@ -5,7 +5,7 @@ export function Footer() {
 
   return (
     <footer className="w-full border-t border-divider bg-primary py-12">
-      <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="w-full mx-auto px-6 md:px-12 lg:px-20 xl:px-24 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start gap-4">
           <img
             src="/logo.png"

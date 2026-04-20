@@ -30,7 +30,7 @@ export function StickyCTA() {
           className="fixed top-0 left-0 right-0 z-[60] hidden md:block"
         >
           <div className="w-full h-16 bg-[#0A0A0A]/95 backdrop-blur-xl border-b border-white/10 flex items-center justify-center shadow-2xl">
-            <div className="max-w-[1200px] w-full px-6 flex items-center justify-between">
+            <div className="w-full mx-auto px-6 md:px-12 lg:px-20 xl:px-24 flex items-center justify-between">
               <span className="text-white font-bold text-[18px]">
                 Get your product live in 4 weeks &rarr;
               </span>

@@ -14,7 +14,7 @@ const offerItems = [
 export function OfferStack() {
   return (
     <section className="py-24 md:py-32 bg-primary">
-      <div className="max-w-[800px] w-full mx-auto px-6 flex flex-col items-center">
+      <div className="w-full mx-auto px-6 md:px-12 lg:px-20 xl:px-24 flex flex-col items-center">
         
         <h2 className="text-[32px] md:text-[40px] font-bold text-center mb-10 leading-tight">
           Here&apos;s exactly what you get when we build your product:
@@ -42,7 +42,7 @@ export function OfferStack() {
           </p>
           
           <Button variant="primary" className="w-full sm:w-auto px-12">
-            Claim your sprint slot &rarr;
+            Book a 20-min scoping call &rarr;
           </Button>
         </div>
 

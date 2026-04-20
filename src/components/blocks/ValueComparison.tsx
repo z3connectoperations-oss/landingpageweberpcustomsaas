@@ -4,19 +4,18 @@ import { Check, X } from "lucide-react";
 export function ValueComparison() {
   return (
     <section className="py-24 bg-primary border-y border-divider">
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+      <div className="w-full mx-auto px-6 md:px-12 lg:px-20 xl:px-24 relative z-10">
         
         <div className="text-center mb-16">
-          <p className="text-[14px] uppercase tracking-wider text-muted font-bold mb-2">The Market Reality</p>
           <h2 className="text-[32px] md:text-[48px] font-black text-white leading-tight">
             Why founders choose Z3 over the alternatives
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-0 lg:items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 lg:items-center xl:max-w-6xl xl:mx-auto">
           
           {/* Column 1: In House */}
-          <div className="bg-primary border border-divider rounded-2xl lg:rounded-r-none p-8 lg:p-10 z-0">
+          <div className="bg-primary border border-divider rounded-2xl p-8 lg:p-10 z-0">
             <h3 className="text-[20px] font-bold text-white mb-2">Hiring in-house</h3>
             <p className="text-[14px] text-muted mb-8">Building a team from scratch</p>
             
@@ -41,9 +40,9 @@ export function ValueComparison() {
           </div>
 
           {/* Column 2: Z3 Sprint System (Highlighted) */}
-          <div className="bg-elevated border-2 border-accent rounded-2xl p-8 lg:p-12 z-10 shadow-2xl relative lg:scale-110 lg:-mx-4 my-4 lg:my-0">
+          <div className="bg-elevated border-2 border-accent rounded-2xl p-8 lg:p-12 z-10 shadow-[0_0_40px_rgba(34,197,94,0.1)] relative transform lg:-translate-y-4 my-4 lg:my-0">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-primary px-4 py-1 rounded-full text-[12px] font-bold uppercase tracking-wider">
-              The Faster Path
+              Z3 Sprint System™
             </div>
             <h3 className="text-[24px] font-black text-white mb-2">Z3 Sprint System</h3>
             <p className="text-[14px] text-muted mb-8">Your product. Shipped fast.</p>
@@ -77,9 +76,9 @@ export function ValueComparison() {
           </div>
 
           {/* Column 3: Traditional Agency */}
-          <div className="bg-primary border border-divider rounded-2xl lg:rounded-l-none p-8 lg:p-10 z-0">
-            <h3 className="text-[20px] font-bold text-white mb-2">Traditional agency</h3>
-            <p className="text-[14px] text-muted mb-8">The standard offshore model</p>
+          <div className="bg-primary border border-divider rounded-2xl p-8 lg:p-10 z-0">
+            <h3 className="text-[20px] font-bold text-white mb-2">Traditional agency / US dev shop</h3>
+            <p className="text-[14px] text-muted mb-8">The standard high-cost model</p>
             
             <ul className="space-y-6">
               <li className="flex items-start gap-4">

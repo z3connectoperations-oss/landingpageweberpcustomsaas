@@ -15,7 +15,7 @@ export function HeroSplit() {
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-20" />
       
-      <div className="max-w-4xl w-full mx-auto px-6 flex flex-col items-center text-center relative z-10">
+      <div className="w-full mx-auto px-6 md:px-12 lg:px-20 xl:px-24 flex flex-col items-center text-center relative z-10">
         
         <div className="flex flex-col items-center gap-8">
           <motion.div {...motionProps} transition={{ duration: 0.5, delay: 0 }}>
@@ -29,9 +29,9 @@ export function HeroSplit() {
           </motion.h1>
           
           <motion.p {...motionProps} transition={{ duration: 0.5, delay: 0.2 }} className="text-[20px] md:text-[24px] text-muted max-w-3xl leading-relaxed mx-auto">
-            We build SaaS, ERPs, and web apps for US companies at 1/3 the cost of a US agency, and ship working software every Friday. <strong className="text-white">30+ businesses live. 50+ systems in production.</strong>
+            We build SaaS, ERPs, and web apps for US companies at 1/3 the cost of a US agency, and ship a working product in 10 weeks — with a live preview by Day 10. <strong className="text-white">30+ businesses live. 50+ systems in production.</strong>
           </motion.p>
-          
+
           <motion.div {...motionProps} transition={{ duration: 0.5, delay: 0.3 }} className="flex flex-wrap justify-center gap-6 mt-2 text-sm md:text-base font-medium text-body">
             <span className="flex items-center gap-1.5">
               <Check className="w-5 h-5 text-accent" /> 50+ shipped
@@ -44,22 +44,16 @@ export function HeroSplit() {
             </span>
           </motion.div>
 
-          <motion.div {...motionProps} transition={{ duration: 0.5, delay: 0.4 }} className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mt-6">
-            <Button variant="primary" className="text-lg px-8 py-4">
-              See if Z3 is right for you &rarr;
-            </Button>
-            <Button variant="secondary" className="text-lg px-8 py-4" href="#proof">
-              See what we&apos;ve shipped &darr;
-            </Button>
-          </motion.div>
-
-          <motion.div {...motionProps} transition={{ duration: 0.5, delay: 0.5 }} className="flex flex-col items-center mt-4">
+          <motion.div {...motionProps} transition={{ duration: 0.5, delay: 0.35 }} className="flex flex-col items-center mt-2">
             <p className="text-[13px] font-medium text-accent">
               We take 2 sprints per month — currently booking for May 2026.
             </p>
-            <p className="text-xs text-muted/70 mt-1">
-              Typical response: under 2 hours.
-            </p>
+          </motion.div>
+
+          <motion.div {...motionProps} transition={{ duration: 0.5, delay: 0.4 }} className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mt-4">
+            <Button variant="primary" className="text-lg px-8 py-4">
+              Book a 20-min scoping call &rarr;
+            </Button>
           </motion.div>
         </div>
       </div>

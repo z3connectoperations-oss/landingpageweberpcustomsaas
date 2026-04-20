@@ -35,15 +35,19 @@ const faqs = [
 ];
 
 export function AccordionGrid() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndices, setOpenIndices] = useState<Set<number>>(new Set([0, 1]));
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenIndices(prev => {
+      const next = new Set(prev);
+      next.has(index) ? next.delete(index) : next.add(index);
+      return next;
+    });
   };
 
   return (
-    <section className="py-24 md:py-32 bg-primary">
-      <div className="max-w-[800px] mx-auto px-6">
+    <section className="py-24 md:py-32 bg-primary" aria-label="Frequently asked questions">
+      <div className="w-full mx-auto px-6 md:px-12 lg:px-20 xl:px-24">
         
         <div className="text-center mb-16">
           <h2 className="text-[32px] md:text-[48px] font-black leading-tight text-white mb-4">
@@ -56,7 +60,7 @@ export function AccordionGrid() {
 
         <div className="flex flex-col gap-4">
           {faqs.map((faq, idx) => {
-            const isOpen = openIndex === idx;
+            const isOpen = openIndices.has(idx);
             
             return (
               <div 
@@ -97,11 +101,11 @@ export function AccordionGrid() {
           {/* Final Terminal Custom CTA Node */}
           <div className="mt-8 p-8 md:p-10 rounded-2xl border-2 border-accent border-dashed bg-accent/5 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <div>
-              <h4 className="text-[20px] font-bold text-white mb-2">Still have questions?</h4>
+              <h3 className="text-[20px] font-bold text-white mb-2">Still have questions?</h3>
               <p className="text-[14px] text-body">We're happy to walk through your specific use case.</p>
             </div>
             <Button variant="primary" className="shrink-0 px-8">
-              Talk to us directly &rarr;
+              Book a 20-min scoping call &rarr;
             </Button>
           </div>
 

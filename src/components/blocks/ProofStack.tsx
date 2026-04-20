@@ -1,60 +1,54 @@
 import React from "react";
 
 const stats = [
-  { value: "92%", label: "Reduction in Admin Time" },
-  { value: "2.4x", label: "Booking Volume Increase" },
-  { value: "Zero", label: "Estimation Errors" },
+  { value: "30+", label: "Businesses shipped" },
+  { value: "50+", label: "Production systems live" },
+  { value: "8 yrs", label: "Building software" },
 ];
 
 
 
 const projects = [
   {
-    badge: "FLAGSHIP",
-    badgeColor: "bg-gradient-to-r from-blue-600 to-purple-600 text-white border-transparent",
     title: "ZAssist",
     desc: "Your AI-powered business assistant. Handles customer queries, manages appointments, and automates repetitive tasks — so you can focus on growing.",
+    meta: "Client: [Name] · Stack: React, Node, Firebase",
     tags: ["AI Chat", "Appointments", "Analytics", "Multi-language"],
     size: "large"
   },
   {
-    badge: "AI AUTOMATION",
-    badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/30",
-    title: "Content Flow",
+    title: "ContentFlow",
     desc: "Automate your entire content strategy. One prompt generates optimized posts for all your social channels, handled by AI agents that understand your brand voice.",
+    meta: "Stack: Next.js, FastAPI · Internal product",
     tags: ["Multi-platform", "AI Scheduling", "Brand Voice", "Analytics"],
     size: "large"
   },
   {
-    badge: "POS",
-    badgeColor: "bg-white/5 text-white/80 border-white/10",
     title: "ZPOS",
     desc: "Mobile-first billing system. Works offline, syncs when connected. Built for speed.",
+    meta: "Stack: React Native · 5+ clients live",
     tags: ["Offline", "Fast billing", "Reports"],
     size: "medium"
   },
   {
-    badge: "CRM",
-    badgeColor: "bg-white/5 text-white/80 border-white/10",
     title: "ZCRM",
     desc: "Track leads, follow-ups, and customer relationships. Simple but powerful.",
+    meta: "Stack: React, Supabase · Deployed",
     tags: ["Leads", "Pipeline", "Reminders"],
     size: "medium"
   },
   {
-    badge: "LOGISTICS",
-    badgeColor: "bg-white/5 text-white/80 border-white/10",
-    title: "Route 66",
-    desc: "AI-Powered Fleet Management System. Real-time tracking and logistics.",
-    tags: ["Tracking", "Routing", "Fleet"],
+    title: "ZLMS",
+    desc: "Complete Learning Management System. Create courses, track student progress, and distribute content seamlessly.",
+    meta: "Stack: React, Supabase · Education",
+    tags: ["Courses", "Analytics", "Education"],
     size: "medium"
   },
   {
-    badge: "WEB3",
-    badgeColor: "bg-white/5 text-white/80 border-white/10",
-    title: "Safuu Dashboard",
-    desc: "High-traffic DeFi monitoring infrastructure for 100k+ concurrent users.",
-    tags: ["Crypto", "Scale", "Live Data"],
+    title: "ZHMS",
+    desc: "Modern Hospital Management System. Streamline patient records, appointments, and hospital operations.",
+    meta: "Stack: Next.js, Node · Healthcare",
+    tags: ["Healthcare", "Records", "Booking"],
     size: "medium"
   }
 ];
@@ -62,7 +56,7 @@ const projects = [
 export function ProofStack() {
   return (
     <section id="proof" className="py-24 md:py-32 bg-primary">
-      <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-24">
+      <div className="w-full mx-auto px-6 md:px-12 lg:px-20 xl:px-24 flex flex-col gap-24">
         
         {/* Top: Stat bar */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-divider py-12">
@@ -80,19 +74,15 @@ export function ProofStack() {
         <div>
           <div className="text-center mb-16">
             <p className="text-[14px] uppercase tracking-wider text-muted font-bold mb-2">Featured Products</p>
-            <h3 className="text-[40px] md:text-[48px] font-black text-white leading-tight">Tools we've built and shipped.</h3>
+            <h2 className="text-[40px] md:text-[48px] font-black text-white leading-tight">Work we've shipped.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {projects.map((p, idx) => (
               <div key={idx} className={`p-8 rounded-[24px] flex flex-col gap-4 border border-white/10 bg-[#0A0A0A]/50 backdrop-blur-md hover:border-white/20 transition-all duration-300 ${p.size === 'large' ? 'lg:col-span-2 shadow-xl' : 'lg:col-span-1 shadow-lg'}`}>
-                <div>
-                  <span className={`inline-block px-3 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase border ${p.badgeColor}`}>
-                    {p.badge}
-                  </span>
-                </div>
-                <h4 className={`font-black text-white ${p.size === 'large' ? 'text-[32px] mt-2' : 'text-[24px]'}`}>{p.title}</h4>
-                <p className={`text-white/60 leading-relaxed mb-auto ${p.size === 'large' ? 'text-[16px]' : 'text-[15px]'}`}>{p.desc}</p>
-                <div className="flex flex-wrap gap-2 mt-6">
+                <h4 className={`font-black text-white ${p.size === 'large' ? 'text-[32px]' : 'text-[24px]'}`}>{p.title}</h4>
+                <p className={`text-white/60 leading-relaxed ${p.size === 'large' ? 'text-[16px]' : 'text-[15px]'}`}>{p.desc}</p>
+                <p className="text-[12px] text-white/40 font-mono">{p.meta}</p>
+                <div className="flex flex-wrap gap-2 mt-auto pt-4">
                   {p.tags.map(tag => (
                     <span key={tag} className="px-3 py-1.5 bg-white/5 rounded-md text-[12px] font-medium text-white/70 border border-white/5">
                       {tag}

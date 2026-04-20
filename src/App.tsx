@@ -11,6 +11,7 @@ import { AccordionGrid } from "@/components/blocks/AccordionGrid";
 import { FullBleedCTA } from "@/components/blocks/FullBleedCTA";
 import { CalendlyProvider } from "@/components/ui/CalendlyModal";
 import { MobileCTA } from "@/components/layout/MobileCTA";
+import { SEOSchema } from "@/components/SEOSchema";
 
 
 import { TeamSection } from "@/components/blocks/TeamSection";
@@ -33,11 +34,10 @@ const testimonialsSetB = [
 export default function App() {
   return (
     <>
-
+      <SEOSchema />
       <Navbar />
-      <main className="flex-1 mt-20"> 
+      <main role="main" className="flex-1 mt-20"> 
         <HeroSplit />
-        <TeamSection />
         <ProblemAgitation />
         <ValueComparison />
         <FeatureGrid />
@@ -45,9 +45,10 @@ export default function App() {
         <ProofStack />
         <TestimonialCarousel testimonials={testimonialsSetA} />
         <ClientMarquee />
+        <TeamSection />
         <VerticalTimeline />
-        <AccordionGrid />
         <TestimonialCarousel testimonials={testimonialsSetB} />
+        <AccordionGrid />
         <FullBleedCTA />
       </main>
       <Footer />

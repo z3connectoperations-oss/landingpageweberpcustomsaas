@@ -47,7 +47,7 @@ export function TestimonialCarousel({ testimonials }: Props) {
   const current = testimonials[currentIndex];
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto px-6 py-16">
+    <div className="relative w-full mx-auto px-6 md:px-12 lg:px-20 xl:px-24 py-16">
       
       {/* Container */}
       <div className="relative bg-[#0A0A0A]/50 border border-white/10 rounded-[32px] p-8 md:p-16 backdrop-blur-md overflow-hidden min-h-[400px] flex flex-col justify-center">
@@ -71,9 +71,9 @@ export function TestimonialCarousel({ testimonials }: Props) {
                 {current.context}
               </span>
               
-              <h3 className="text-[24px] sm:text-[32px] md:text-[40px] font-medium text-white/90 leading-tight mb-12 max-w-4xl font-serif italic">
+              <blockquote className="text-[24px] sm:text-[32px] md:text-[40px] font-medium text-white/90 leading-tight mb-12 max-w-4xl font-serif italic">
                 "{current.quote}"
-              </h3>
+              </blockquote>
 
               <div className="flex flex-col items-center gap-4">
                 <div className="flex items-center justify-center w-20 h-20 rounded-full bg-white/5 border border-white/10 overflow-hidden">

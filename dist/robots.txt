@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://z3connect.com/sitemap.xml

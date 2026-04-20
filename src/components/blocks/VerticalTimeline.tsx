@@ -57,7 +57,7 @@ export function VerticalTimeline() {
 
   return (
     <section className="py-24 md:py-32 bg-elevated border-y border-divider overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="w-full mx-auto px-6 md:px-12 lg:px-20 xl:px-24">
         
         <div className="text-center mb-20 lg:mb-24">
           <p className="text-[14px] uppercase tracking-wider text-accent font-bold mb-2">The Z3 Sprint System</p>

@@ -25,11 +25,11 @@ const features = [
 
 export function FeatureGrid() {
   return (
-    <section className="py-24 md:py-32 bg-primary px-6">
-      <div className="max-w-[1200px] mx-auto">
+    <section className="py-24 md:py-32 bg-primary">
+      <div className="w-full mx-auto px-6 md:px-12 lg:px-20 xl:px-24">
         <div className="text-center mb-16">
           <h2 className="text-[32px] md:text-[48px] font-bold mb-4 tracking-tight">Introducing the Z3 Sprint System™</h2>
-          <p className="text-[18px] text-muted">Fixed scope. Weekly demos. Production code in 30 days.</p>
+          <p className="text-[18px] text-muted">Fixed scope. Weekly demos. Live preview in 10 days. Production in 10 weeks.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
