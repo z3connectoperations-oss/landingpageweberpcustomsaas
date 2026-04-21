@@ -42,7 +42,7 @@ export function OfferStack() {
           </p>
           <p className="text-xl md:text-[32px] font-bold text-white mb-6 md:mb-8">
             Your fixed price: Starts at $4999.<br/>
-            <span className="text-accent text-base md:text-[24px]">Custom-quoted in 48 hours.</span>
+            <span className="text-accent text-base md:text-[24px]">Custom-quoted in 24 hours.</span>
           </p>
           
           <Button variant="primary" className="w-full md:w-auto py-4 text-base font-bold rounded-xl md:px-12">

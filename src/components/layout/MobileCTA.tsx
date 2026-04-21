@@ -21,7 +21,7 @@ export function MobileCTA() {
         Book a 20-min scoping call &rarr;
       </Button>
       <p className="text-[11px] text-[#666] text-center mt-2">
-        Free call · No sales pitch · Fixed-price quote in 48hrs
+        Free call · No sales pitch · Fixed-price quote in 24hrs
       </p>
     </div>
   );
