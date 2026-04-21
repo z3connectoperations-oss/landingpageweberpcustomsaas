@@ -36,7 +36,7 @@ export default function App() {
     <>
       <SEOSchema />
       <Navbar />
-      <main role="main" className="flex-1 mt-20"> 
+      <main role="main" className="flex-1 mt-14 md:mt-20 pb-24 md:pb-0"> 
         <HeroSplit />
         <ProblemAgitation />
         <ValueComparison />

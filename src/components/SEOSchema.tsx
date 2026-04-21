@@ -39,7 +39,7 @@ export function SEOSchema() {
       "priceCurrency": "USD",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "5000",
+        "minPrice": "4999",
         "priceCurrency": "USD"
       }
     }

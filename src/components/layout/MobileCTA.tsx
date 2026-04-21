@@ -6,25 +6,23 @@ export function MobileCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show when user scrolls down 400px
-      if (window.scrollY > 400) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 400);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 p-4 bg-primary/95 backdrop-blur-md border-t border-divider z-40 md:hidden flex justify-center animate-in slide-in-from-bottom-full duration-300">
-      <Button variant="primary" className="w-full h-14 text-lg">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 pb-[max(16px,env(safe-area-inset-bottom))] bg-black/95 backdrop-blur-sm border-t border-[#1F1F1F] md:hidden">
+      <Button variant="primary" className="w-full py-4 text-base font-black rounded-xl active:scale-95 transition-transform duration-100">
         Book a 20-min scoping call &rarr;
       </Button>
+      <p className="text-[11px] text-[#666] text-center mt-2">
+        Free call · No sales pitch · Fixed-price quote in 48hrs
+      </p>
     </div>
   );
 }

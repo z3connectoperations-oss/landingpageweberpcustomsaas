@@ -13,8 +13,8 @@ const clientLogos = [
 
 export function ClientMarquee() {
   return (
-    <section className="py-16 md:py-20 bg-primary border-y border-divider flex flex-col items-center">
-      <p className="text-[14px] uppercase tracking-wider text-muted font-bold mb-10 text-center">
+    <section className="py-12 md:py-20 bg-primary border-y border-divider flex flex-col items-center">
+      <p className="text-[12px] md:text-[14px] uppercase tracking-wider text-muted font-bold mb-8 md:mb-10 text-center px-5">
         Trusted by high-growth companies
       </p>
 
@@ -24,24 +24,24 @@ export function ClientMarquee() {
         {/* Scrolling Inner */}
         <div className="flex animate-marquee min-w-full w-max">
           {clientLogos.map((logo, idx) => (
-             <div key={idx} className="flex-shrink-0 mx-8 md:mx-16 flex flex-col items-center justify-center gap-3 w-[160px] md:w-[200px]">
+             <div key={idx} className="flex-shrink-0 mx-6 md:mx-16 flex flex-col items-center justify-center gap-2 md:gap-3 w-[120px] md:w-[200px]">
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="h-8 md:h-10 w-auto object-contain filter invert mix-blend-screen opacity-60 hover:opacity-100 transition-opacity duration-300"
+                className="h-6 md:h-10 w-auto object-contain filter invert mix-blend-screen opacity-60 hover:opacity-100 transition-opacity duration-300"
               />
-              <span className="text-[12px] text-muted/60 text-center leading-tight max-w-full truncate">{logo.subtitle}</span>
+              <span className="text-[10px] md:text-[12px] text-muted/60 text-center leading-tight max-w-full truncate">{logo.subtitle}</span>
             </div>
           ))}
           {/* Duplicate set for seamless loop */}
           {clientLogos.map((logo, idx) => (
-            <div key={`dup-${idx}`} className="flex-shrink-0 mx-8 md:mx-16 flex flex-col items-center justify-center gap-3 w-[160px] md:w-[200px]">
+            <div key={`dup-${idx}`} className="flex-shrink-0 mx-6 md:mx-16 flex flex-col items-center justify-center gap-2 md:gap-3 w-[120px] md:w-[200px]">
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="h-8 md:h-10 w-auto object-contain filter invert mix-blend-screen opacity-60 hover:opacity-100 transition-opacity duration-300"
+                className="h-6 md:h-10 w-auto object-contain filter invert mix-blend-screen opacity-60 hover:opacity-100 transition-opacity duration-300"
               />
-              <span className="text-[12px] text-muted/60 text-center leading-tight max-w-full truncate">{logo.subtitle}</span>
+              <span className="text-[10px] md:text-[12px] text-muted/60 text-center leading-tight max-w-full truncate">{logo.subtitle}</span>
             </div>
           ))}
         </div>

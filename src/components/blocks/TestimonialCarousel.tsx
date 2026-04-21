@@ -47,13 +47,13 @@ export function TestimonialCarousel({ testimonials }: Props) {
   const current = testimonials[currentIndex];
 
   return (
-    <div className="relative w-full mx-auto px-6 md:px-12 lg:px-20 xl:px-24 py-16">
+    <div className="relative w-full mx-auto px-5 md:px-12 lg:px-20 xl:px-24 py-10 md:py-16">
       
       {/* Container */}
-      <div className="relative bg-[#0A0A0A]/50 border border-white/10 rounded-[32px] p-8 md:p-16 backdrop-blur-md overflow-hidden min-h-[400px] flex flex-col justify-center">
+      <div className="relative bg-[#0A0A0A]/50 border border-white/10 rounded-[20px] md:rounded-[32px] p-5 md:p-16 backdrop-blur-md overflow-hidden min-h-[300px] md:min-h-[400px] flex flex-col justify-center">
         
         {/* Giant Quote Background */}
-        <Quote className="absolute top-8 left-8 w-24 h-24 sm:w-48 sm:h-48 text-white/5 rotate-180 pointer-events-none" />
+        <Quote className="absolute top-4 left-4 w-16 h-16 md:top-8 md:left-8 md:w-48 md:h-48 text-white/5 rotate-180 pointer-events-none" />
 
         <div className="relative z-10 w-full">
           <AnimatePresence mode="wait" custom={direction}>
@@ -67,16 +67,16 @@ export function TestimonialCarousel({ testimonials }: Props) {
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="flex flex-col items-center text-center"
             >
-              <span className="text-accent text-[12px] md:text-[14px] font-bold uppercase tracking-widest mb-6">
+              <span className="text-accent text-[10px] md:text-[14px] font-bold uppercase tracking-widest mb-4 md:mb-6">
                 {current.context}
               </span>
               
-              <blockquote className="text-[24px] sm:text-[32px] md:text-[40px] font-medium text-white/90 leading-tight mb-12 max-w-4xl font-serif italic">
+              <blockquote className="text-base md:text-[40px] font-medium text-white/90 leading-relaxed md:leading-tight mb-8 md:mb-12 max-w-4xl font-serif italic">
                 "{current.quote}"
               </blockquote>
 
-              <div className="flex flex-col items-center gap-4">
-                <div className="flex items-center justify-center w-20 h-20 rounded-full bg-white/5 border border-white/10 overflow-hidden">
+              <div className="flex flex-col items-center gap-3 md:gap-4">
+                <div className="flex items-center justify-center w-14 h-14 md:w-20 md:h-20 rounded-full bg-white/5 border border-white/10 overflow-hidden">
                   <img 
                     src={current.logo} 
                     alt={current.alt} 
@@ -84,8 +84,8 @@ export function TestimonialCarousel({ testimonials }: Props) {
                   />
                 </div>
                 <div>
-                  <h4 className="text-[18px] font-bold text-white">{current.author}</h4>
-                  <p className="text-[15px] text-white/50">{current.role}</p>
+                  <h4 className="text-sm md:text-[18px] font-bold text-white">{current.author}</h4>
+                  <p className="text-xs md:text-[15px] text-white/50">{current.role}</p>
                 </div>
               </div>
 
@@ -94,25 +94,25 @@ export function TestimonialCarousel({ testimonials }: Props) {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-2 right-2 md:left-6 md:right-6 flex justify-between z-20 pointer-events-none">
+        <div className="absolute top-1/2 -translate-y-1/2 left-1 right-1 md:left-6 md:right-6 flex justify-between z-20 pointer-events-none">
           <button 
             onClick={slideLeft}
-            className="w-12 h-12 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-black transition-all pointer-events-auto backdrop-blur-md hover:scale-110"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-black transition-all pointer-events-auto backdrop-blur-md hover:scale-110"
             aria-label="Previous Testimonial"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
           <button 
             onClick={slideRight}
-            className="w-12 h-12 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-black transition-all pointer-events-auto backdrop-blur-md hover:scale-110"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-black transition-all pointer-events-auto backdrop-blur-md hover:scale-110"
             aria-label="Next Testimonial"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
         </div>
         
         {/* Index Dots */}
-        <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
+        <div className="absolute bottom-4 md:bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
           {testimonials.map((_, idx) => (
             <button
               key={idx}
