@@ -14,7 +14,6 @@ import { MobileCTA } from "@/components/layout/MobileCTA";
 import { SEOSchema } from "@/components/SEOSchema";
 
 
-import { TeamSection } from "@/components/blocks/TeamSection";
 import { TestimonialCarousel } from "@/components/blocks/TestimonialCarousel";
 import { ValueComparison } from "@/components/blocks/ValueComparison";
 
@@ -45,7 +44,6 @@ export default function App() {
         <ProofStack />
         <TestimonialCarousel testimonials={testimonialsSetA} />
         <ClientMarquee />
-        <TeamSection />
         <VerticalTimeline />
         <TestimonialCarousel testimonials={testimonialsSetB} />
         <AccordionGrid />
