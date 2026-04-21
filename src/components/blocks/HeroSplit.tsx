@@ -29,7 +29,7 @@ export function HeroSplit() {
           </motion.h1>
           
           <motion.p {...motionProps} transition={{ duration: 0.5, delay: 0.2 }} className="text-base md:text-[24px] text-[#A3A3A3] max-w-[300px] md:max-w-3xl leading-relaxed mx-auto">
-            We build SaaS, ERPs, and web apps for US companies at 1/3 the cost of a US agency, and ship a working product in 10 weeks — with a live preview by Day 10. <strong className="text-white">30+ businesses live. 50+ systems in production.</strong>
+            We build SaaS, ERPs, and web apps for US companies at 1/3 the cost of a US agency, and ship a working product in 3-4 weeks — with a live preview by Day 10. <strong className="text-white">30+ businesses live. 50+ systems in production.</strong>
           </motion.p>
 
           <motion.div {...motionProps} transition={{ duration: 0.5, delay: 0.3 }} className="flex flex-wrap justify-center gap-2 md:gap-6 mt-2 text-xs md:text-base font-medium text-body">

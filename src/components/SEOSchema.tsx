@@ -29,7 +29,7 @@ export function SEOSchema() {
       "name": "Z3Connect",
       "url": "https://z3connect.com"
     },
-    "description": "Fixed-scope, fixed-price custom software sprints. Live preview in 10 days. Production in 10 weeks.",
+    "description": "Fixed-scope, fixed-price custom software sprints. Live preview in 10 days. Production in 3-4 weeks.",
     "areaServed": {
       "@type": "Country",
       "name": "United States"
@@ -86,7 +86,7 @@ export function SEOSchema() {
         "name": "How is this different from hiring a freelancer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Freelancers are a single point of failure with massive key-person risk. If they get sick or ghost you, your product dies. We are a unified full-stack engineering factory with established playbooks, rigorous QA, and an ironclad 10-week delivery timeline."
+          "text": "Freelancers are a single point of failure with massive key-person risk. If they get sick or ghost you, your product dies. We are a unified full-stack engineering factory with established playbooks, rigorous QA, and an ironclad 3-4 week delivery timeline."
         }
       },
       {

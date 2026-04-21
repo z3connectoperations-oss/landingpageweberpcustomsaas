@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "How is this different from hiring a freelancer?",
-    answer: "Freelancers are a single point of failure with massive key-person risk. If they get sick or ghost you, your product dies. We are a unified full-stack engineering factory with established playbooks, rigorous QA, and an ironclad 10-week delivery timeline."
+    answer: "Freelancers are a single point of failure with massive key-person risk. If they get sick or ghost you, your product dies. We are a unified full-stack engineering factory with established playbooks, rigorous QA, and an ironclad 3-4 week delivery timeline."
   },
   {
     question: "What if I need changes after the sprint ends?",

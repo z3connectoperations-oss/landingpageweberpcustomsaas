@@ -29,7 +29,7 @@ export function FeatureGrid() {
       <div className="w-full mx-auto px-5 md:px-12 lg:px-20 xl:px-24">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-[28px] md:text-[48px] font-bold mb-4 tracking-tight">Introducing the Z3 Sprint System™</h2>
-          <p className="text-sm md:text-[18px] text-muted">Fixed scope. Weekly demos. Live preview in 10 days. Production in 10 weeks.</p>
+          <p className="text-sm md:text-[18px] text-muted">Fixed scope. Weekly demos. Live preview in 10 days. Production in 3-4 weeks.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">

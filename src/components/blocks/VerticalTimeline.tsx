@@ -5,7 +5,7 @@ const phases = [
   {
     phase: "Phase 1",
     title: "Scope & Strategy",
-    duration: "Days 1–10",
+    duration: "Days 1–5",
     description: "We don't guess. We map your exact workflow before writing a single line of code.",
     points: [
       "Deep-dive workflow audit",
@@ -17,7 +17,7 @@ const phases = [
   {
     phase: "Phase 2",
     title: "First Live Build",
-    duration: "Days 11–40",
+    duration: "Days 6–12",
     description: "You see actual working software on staging. No more mockups.",
     points: [
       "Core infrastructure deployed",
@@ -28,11 +28,11 @@ const phases = [
   },
   {
     phase: "Phase 3",
-    title: "Weekly Shipping",
-    duration: "Days 41–70",
-    description: "Every Friday, we demo a new live build. You test with real data.",
+    title: "Iteration & Polish",
+    duration: "Days 13–21",
+    description: "Rapid iteration cycles. You test with real data as we finalize features.",
     points: [
-      "Weekly live staging demos",
+      "Live staging iterations",
       "Immediate feedback integration",
       "Complex logic & API connections",
       "End-to-end user workflows"
@@ -41,7 +41,7 @@ const phases = [
   {
     phase: "Phase 4",
     title: "Launch & Scale",
-    duration: "Day 70+",
+    duration: "Day 21+",
     description: "Production deployment and handover. The code is 100% yours.",
     points: [
       "Production server configuration",
@@ -72,7 +72,7 @@ export function VerticalTimeline() {
         <div className="text-center mb-12 md:mb-24">
           <p className="text-[12px] md:text-[14px] uppercase tracking-wider text-accent font-bold mb-2">The Z3 Sprint System</p>
           <h2 className="text-[28px] md:text-[48px] font-black leading-tight text-white">
-            How we ship in 10 weeks.
+            How we ship in 3-4 weeks.
           </h2>
         </div>
 
