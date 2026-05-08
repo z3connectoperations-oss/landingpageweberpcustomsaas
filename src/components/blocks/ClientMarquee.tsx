@@ -13,9 +13,9 @@ const clientLogos = [
 
 export function ClientMarquee() {
   return (
-    <section className="py-12 md:py-20 bg-primary border-y border-divider flex flex-col items-center">
+    <section className="py-16 md:py-20 bg-primary border-y border-divider flex flex-col items-center">
       <p className="text-[12px] md:text-[14px] uppercase tracking-wider text-muted font-bold mb-8 md:mb-10 text-center px-5">
-        Trusted by high-growth companies
+        Trusted by founders and operators across industries
       </p>
 
       {/* Marquee Track Container */}

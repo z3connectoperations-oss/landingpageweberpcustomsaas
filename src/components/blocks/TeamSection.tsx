@@ -34,7 +34,7 @@ export function TeamSection() {
 
   return (
     <section className="py-16 md:py-20 bg-primary overflow-hidden">
-      <div className="w-full mx-auto px-5 md:px-12 lg:px-20 xl:px-24">
+      <div className="w-full max-w-7xl mx-auto px-5 md:px-12 lg:px-20 xl:px-24">
         
         {/* Top Block: Founder Spotlight */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-16 md:mb-20 bg-elevated/30 border border-white/5 p-6 md:p-12 lg:p-16 rounded-[24px] md:rounded-[32px] max-w-6xl mx-auto shadow-2xl">

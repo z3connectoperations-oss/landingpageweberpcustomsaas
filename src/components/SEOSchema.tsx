@@ -3,12 +3,12 @@ export function SEOSchema() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Z3Connect",
-    "url": "https://z3connect.com",
+    "url": "https://z3connect.in",
     "email": "hello@z3connect.com",
-    "description": "Z3Connect builds custom SaaS, ERP systems, and web apps for US companies at fixed price with senior engineers.",
+    "description": "Z3Connect builds custom SaaS, ERP systems, and web apps for Indian startups and SMEs with senior engineers.",
     "areaServed": {
       "@type": "Country",
-      "name": "United States"
+      "name": "India"
     },
     "serviceType": ["Custom Software Development", "SaaS Development", "ERP Development", "Web Application Development"],
     "founder": {
@@ -16,8 +16,7 @@ export function SEOSchema() {
       "name": "Ahamed Shafeek",
       "jobTitle": "Founder & CEO",
       "url": "https://www.linkedin.com/in/ahamedshafeek/"
-    },
-    "priceRange": "$$"
+    }
   };
 
   const service = {
@@ -27,21 +26,12 @@ export function SEOSchema() {
     "provider": {
       "@type": "ProfessionalService",
       "name": "Z3Connect",
-      "url": "https://z3connect.com"
+      "url": "https://z3connect.in"
     },
-    "description": "Fixed-scope, fixed-price custom software sprints. Live preview in 10 days. Production in 3-4 weeks.",
+    "description": "Fixed-scope custom software sprints. Live preview in 10 days. Production in 3-4 weeks.",
     "areaServed": {
       "@type": "Country",
-      "name": "United States"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "minPrice": "4999",
-        "priceCurrency": "USD"
-      }
+      "name": "India"
     }
   };
 
@@ -51,50 +41,50 @@ export function SEOSchema() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What if I don't know exactly what I want to build yet?",
+        "name": "What if I don't know exactly what I want built?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "That's exactly why we start with a deep-dive workflow audit in Phase 1. We don't write a single line of code until we've fully mapped your operations and delivered interactive wireframes that solve the core business problem."
+          "text": "That's literally Phase 1. We sit with you, map your workflow, build wireframes, and define every feature — before we write a single line of code. You don't need a spec doc. You need a problem worth solving. We handle the rest."
         }
       },
       {
         "@type": "Question",
-        "name": "What does working with you actually look like week by week?",
+        "name": "How is this different from a traditional freelancer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It's highly structured and fiercely predictable. You get actual working software pushed to a live staging server every single Friday. We hop on a quick review async video or call, integrate your feedback, and immediately deploy the next iteration."
+          "text": "Your friend's freelancer is one person. If they get sick, get a better offer, or just lose interest — your entire product dies. We're a full senior engineering team with established playbooks, rigorous QA, and a 3–4 week delivery guarantee. We don't disappear. We ship."
         }
       },
       {
         "@type": "Question",
-        "name": "Who builds the product — is it outsourced?",
+        "name": "Why not just hire an in-house developer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No PM layers. No outsourcing to cheap talent mills. You work directly with our execution-obsessed, highly senior core engineering unit. We own the codebase natively and ship at a completely different velocity because of it."
+          "text": "When you hire in-house, you face months of recruitment, onboarding, and the risk of attrition. We provide a full senior engineering team that ships a production-ready system in 3–4 weeks for a predictable fixed cost. No hiring friction, no management overhead."
         }
       },
       {
         "@type": "Question",
-        "name": "What happens after launch — are we on our own?",
+        "name": "Who actually builds my product?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Every sprint includes 30 days of post-launch support. We handle all server configurations, domains, automated scaling rules, and any unexpected bugs while you focus on onboarding your users."
+          "text": "Senior engineers who've shipped 50+ production systems. You meet them on the kickoff call. No account manager layer. No PM playing telephone. You talk directly to the people writing your code."
         }
       },
       {
         "@type": "Question",
-        "name": "How is this different from hiring a freelancer?",
+        "name": "What happens after launch?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Freelancers are a single point of failure with massive key-person risk. If they get sick or ghost you, your product dies. We are a unified full-stack engineering factory with established playbooks, rigorous QA, and an ironclad 3-4 week delivery timeline."
+          "text": "Every project includes 30 days of post-launch support. We handle bugs, server configurations, scaling, and deployment issues. After that, you can retain us for ongoing work or hand the codebase to your own team — it's yours, fully documented, on your GitHub."
         }
       },
       {
         "@type": "Question",
-        "name": "What if I need changes after the sprint ends?",
+        "name": "What tech stack do you use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We build using extremely clean, modern tech stacks (React, Node, Python) and hand over 100% of the IP, documentation, and code to you. You can retain us on an expansion contract, or seamlessly hand it off to any internal engineering team."
+          "text": "React, Next.js, Node.js, Python, Firebase, Supabase, PostgreSQL, React Native. We pick what's right for your scale and your budget — not what's trendy. Every stack decision is justified in the scoping phase."
         }
       },
       {
@@ -102,7 +92,7 @@ export function SEOSchema() {
         "name": "How do I get started?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Book a 20-minute scoping call. No sales pressure or account executives. We'll map your problem in real-time and tell you immediately if our sprint system is the right fit for your velocity."
+          "text": "Book a 20-minute scoping call. No sales deck. No 'let me loop in my manager.' We'll map your problem live, tell you if we're the right fit, and send a customized proposal within 24 hours."
         }
       }
     ]
@@ -116,7 +106,7 @@ export function SEOSchema() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://z3connect.com/"
+        "item": "https://z3connect.in/"
       }
     ]
   };

@@ -4,32 +4,32 @@ const features = [
   {
     number: "01",
     title: "Scope Lock (Days 1–5)",
-    description: "We map your workflow, wireframe every screen, agree a fixed price. No \"discovery phase that costs $10K.\""
+    description: "We map your exact workflow. Every screen wireframed. Every feature scoped. Price locked before we write a line of code. No \"discovery phase\" that costs extra and delivers nothing but a PDF."
   },
   {
     number: "02",
     title: "First Live Build (Days 6–10)",
-    description: "You see a working preview on staging by Day 10. Not mockups. Working software."
+    description: "By Day 10, you're clicking through real software on a staging server. Not a prototype. Not a slide deck. Working code, with your data structure, deployed and testable."
   },
   {
     number: "03",
     title: "Weekly Shipping (Days 11–28)",
-    description: "Every Friday: live demo + deployed build. You test it on real devices, with real data."
+    description: "Every Friday: live demo + deployed build. You test it on your phone, with real data. Feedback on Monday → shipped by Friday. No waiting. No \"next sprint.\""
   },
   {
     number: "04",
     title: "Launch & Scale (Day 30+)",
-    description: "Production deploy, handover, docs, 30-day support included. Code is yours."
+    description: "Production deploy. Domain mapped. SSL configured. Docs handed over. 30 days of post-launch support included. Code is on your GitHub. It's yours. Forever."
   }
 ];
 
 export function FeatureGrid() {
   return (
     <section className="py-16 md:py-32 bg-primary">
-      <div className="w-full mx-auto px-5 md:px-12 lg:px-20 xl:px-24">
+      <div className="w-full max-w-7xl mx-auto px-5 md:px-12 lg:px-20 xl:px-24">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-[28px] md:text-[48px] font-bold mb-4 tracking-tight">Introducing the Z3 Sprint System™</h2>
-          <p className="text-sm md:text-[18px] text-muted">Fixed scope. Weekly demos. Live preview in 10 days. Production in 3-4 weeks.</p>
+          <p className="text-sm md:text-[18px] text-muted">Fixed scope. Weekly demos. Live preview in 10 days. Production in 3–4 weeks. No drama.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">

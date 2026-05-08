@@ -8,7 +8,7 @@ export const openCalendly = () => {
 export function CalendlyProvider() {
   const [isOpen, setIsOpen] = useState(false);
   // Optional: Update this with the real URL when the user provides it
-  const calendlyUrl = "https://calendly.com/z3connect-operations/consultationcall?month=2026-04"; 
+  const calendlyUrl = "https://calendly.com/zdoda-ai/30min"; 
 
   useEffect(() => {
     const handleOpen = () => setIsOpen(true);

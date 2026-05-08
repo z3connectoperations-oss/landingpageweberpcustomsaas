@@ -10,7 +10,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", onClick, href, ...props }, ref) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-bold px-8 h-14 rounded-lg transition-all duration-200 text-lg cursor-pointer";
+      "inline-flex items-center justify-center font-bold px-8 h-14 rounded-full transition-all duration-200 text-lg cursor-pointer";
 
     const variants = {
       primary:
