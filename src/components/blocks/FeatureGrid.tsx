@@ -1,0 +1,61 @@
+import { motion } from "framer-motion";
+
+const features = [
+  {
+    number: "01",
+    title: "Scope Lock (Days 1–5)",
+    description: "We map your exact workflow. Every screen wireframed. Every feature scoped. Price locked before we write a line of code. No \"discovery phase\" that costs extra and delivers nothing but a PDF."
+  },
+  {
+    number: "02",
+    title: "First Live Build (Days 6–10)",
+    description: "By Day 10, you're clicking through real software on a staging server. Not a prototype. Not a slide deck. Working code, with your data structure, deployed and testable."
+  },
+  {
+    number: "03",
+    title: "Weekly Shipping (Days 11–28)",
+    description: "Every Friday: live demo + deployed build. You test it on your phone, with real data. Feedback on Monday → shipped by Friday. No waiting. No \"next sprint.\""
+  },
+  {
+    number: "04",
+    title: "Launch & Scale (Day 30+)",
+    description: "Production deploy. Domain mapped. SSL configured. Docs handed over. 30 days of post-launch support included. Code is on your GitHub. It's yours. Forever."
+  }
+];
+
+export function FeatureGrid() {
+  return (
+    <section className="py-16 md:py-32 bg-primary">
+      <div className="w-full max-w-7xl mx-auto px-5 md:px-12 lg:px-20 xl:px-24">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-[28px] md:text-[48px] font-bold mb-4 tracking-tight">Introducing the Z3 Sprint System™</h2>
+          <p className="text-sm md:text-[18px] text-muted">Fixed scope. Weekly demos. Live preview in 10 days. Production in 3–4 weeks. No drama.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.number}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-elevated p-5 md:p-8 rounded-lg border border-divider hover:border-accent transition-colors duration-300 flex flex-col group relative overflow-hidden"
+            >
+              <div className="text-[56px] md:text-[72px] font-mono leading-none font-black text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.1)] group-hover:[-webkit-text-stroke:1px_rgba(0,255,136,0.5)] transition-all duration-300 absolute -top-4 -right-4 select-none">
+                {feature.number}
+              </div>
+              
+              <div className="relative z-10 mt-12">
+                <h3 className="text-base md:text-[20px] font-bold mb-3">{feature.title}</h3>
+                <p className="text-sm md:text-[14px] text-[#A3A3A3] leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

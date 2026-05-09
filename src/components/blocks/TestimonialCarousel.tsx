@@ -1,0 +1,138 @@
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+
+interface Testimonial {
+  context: string;
+  quote: string;
+  author: string;
+  role: string;
+  logo: string;
+  alt: string;
+}
+
+interface Props {
+  testimonials: Testimonial[];
+}
+
+export function TestimonialCarousel({ testimonials }: Props) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  const slideRight = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
+  const slideLeft = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+  const variants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 100 : -100,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (dir: number) => ({
+      x: dir > 0 ? -100 : 100,
+      opacity: 0,
+    }),
+  };
+
+  const current = testimonials[currentIndex];
+
+  return (
+    <section className="py-20 md:py-28 bg-primary">
+      <div className="w-full max-w-7xl mx-auto px-5 md:px-12 lg:px-20 xl:px-24">
+        <div className="text-center mb-10 md:mb-16">
+          <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-3">Client Results</p>
+          <h2 className="text-[28px] md:text-[48px] font-black text-white leading-tight">What our clients say</h2>
+        </div>
+
+        {/* Container */}
+        <div className="relative bg-[#0A0A0A]/50 border border-white/10 rounded-2xl p-5 md:p-16 backdrop-blur-md overflow-hidden min-h-[300px] md:min-h-[400px] flex flex-col justify-center max-w-5xl mx-auto">
+          
+          {/* Giant Quote Background */}
+          <Quote className="absolute top-4 left-4 w-12 h-12 md:top-8 md:left-8 md:w-24 md:h-24 text-white/5 rotate-180 pointer-events-none" />
+
+          <div className="relative z-10 w-full">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={currentIndex}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="flex flex-col items-center text-center"
+              >
+                <span className="text-accent text-[10px] md:text-[14px] font-bold uppercase tracking-widest mb-4 md:mb-6">
+                  {current.context}
+                </span>
+                
+                <blockquote className="text-base md:text-[40px] font-medium text-white/90 leading-relaxed md:leading-tight mb-8 md:mb-12 max-w-4xl font-serif italic">
+                  &ldquo;{current.quote}&rdquo;
+                </blockquote>
+
+                <div className="flex flex-col items-center gap-3 md:gap-4 pt-6 border-t border-white/10 w-full max-w-xs">
+                  <div className="flex items-center justify-center w-14 h-14 md:w-20 md:h-20 rounded-full bg-white/5 border border-white/10 overflow-hidden">
+                    <img 
+                      src={current.logo} 
+                      alt={current.alt} 
+                      className="w-[80%] h-[80%] object-contain filter invert opacity-80"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-sm md:text-[18px] font-bold text-white">{current.author}</h4>
+                    <p className="text-xs md:text-[15px] text-white/50">{current.role}</p>
+                  </div>
+                </div>
+
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="absolute top-1/2 -translate-y-1/2 left-1 right-1 md:left-6 md:right-6 flex justify-between z-20 pointer-events-none">
+            <button 
+              onClick={slideLeft}
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-black transition-all pointer-events-auto backdrop-blur-md hover:scale-110"
+              aria-label="Previous Testimonial"
+            >
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+            <button 
+              onClick={slideRight}
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-black transition-all pointer-events-auto backdrop-blur-md hover:scale-110"
+              aria-label="Next Testimonial"
+            >
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+          </div>
+          
+          {/* Index Dots */}
+          <div className="absolute bottom-4 md:bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
+            {testimonials.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setDirection(idx > currentIndex ? 1 : -1);
+                  setCurrentIndex(idx);
+                }}
+                className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex ? "bg-accent w-6" : "bg-white/20 hover:bg-white/40"}`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
