@@ -4,7 +4,13 @@ export function SEOSchema() {
     "@type": "ProfessionalService",
     "name": "Z3Connect",
     "url": "https://z3connect.in",
-    "email": "hello@z3connect.com",
+    "email": "support@z3connect.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nagercoil",
+      "postalCode": "629002",
+      "addressCountry": "IN"
+    },
     "description": "Z3Connect builds custom SaaS, ERP systems, and web apps for Indian startups and SMEs with senior engineers.",
     "areaServed": {
       "@type": "Country",

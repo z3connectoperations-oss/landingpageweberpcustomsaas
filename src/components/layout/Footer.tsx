@@ -16,8 +16,9 @@ export function Footer() {
         </div>
         
         <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8 text-xs md:text-sm text-muted">
-          <a href="mailto:hello@z3connect.com" className="hover:text-white transition-colors">
-            hello@z3connect.com
+          <span>Nagercoil, 629002</span>
+          <a href="mailto:support@z3connect.com" className="hover:text-white transition-colors">
+            support@z3connect.com
           </a>
           <span>&copy; {currentYear} Z3Connect. All rights reserved.</span>
         </div>

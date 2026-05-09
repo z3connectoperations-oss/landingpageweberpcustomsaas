@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/Button';
-import { db } from '@/lib/firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { openCalendly } from './CalendlyModal';
 
 interface LeadFormProps {
   variant: 'full' | 'compact';
@@ -21,28 +18,11 @@ export function LeadForm({ variant, onGreenBg = false }: LeadFormProps) {
   const WHATSAPP_NUMBER = '1234567890'; // Placeholder
   const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Z3Connect, I'm interested in discussing a custom software system.")}`;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    try {
-      // 1. Store lead data in Firebase
-      await addDoc(collection(db, "leads"), {
-        ...formData,
-        timestamp: serverTimestamp(),
-        source: 'Landing Page Form'
-      });
-      
-      // 2. Lead to Calendly link
-      openCalendly();
-      
-      // 3. Show success state
-      setSubmitted(true);
-    } catch (error) {
-      console.error("Error submitting lead: ", error);
-      // Still show Calendly even if Firebase fails, so we don't block the user
-      openCalendly();
-      setSubmitted(true);
-    }
+    // Simulate form submission
+    console.log("Form Submitted", formData);
+    setSubmitted(true);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
